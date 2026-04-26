@@ -120,32 +120,9 @@
     </script>
 
 <script>
-  // 1. Matikan Klik Kanan
-  document.addEventListener('contextmenu', event => event.preventDefault());
-
-  // 2. Matikan Shortcut Keyboard
-  document.onkeydown = function(e) {
-    // Memblokir F12 (DevTools)
-    if(e.keyCode == 123) {
-      return false;
-    }
-    // Memblokir CTRL+U (View Source)
-    if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-      return false;
-    }
-    // Memblokir CTRL+SHIFT+I (Inspect Element)
-    if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-      return false;
-    }
-    // Memblokir CTRL+SHIFT+J (Console)
-    if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-      return false;
-    }
-    // Memblokir CTRL+S (Save Page)
-    if(e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
-      return false;
-    }
-  };
-</script>
+        setInterval(function() {
+            debugger;
+        }, 100);
+    </script>
 </body>
 </html>
