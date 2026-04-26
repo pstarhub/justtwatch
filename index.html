@@ -50,7 +50,7 @@
             controls
             playsinline
             preload="metadata"
-            controlsList="fullscreen"
+            controlsList="nodownload nofullscreen"
 			video autoplay loop playsinline controls poster="https://cdn.aceimg.com/522b8a325.png"
             src="https://cdn.videy.co/yGtkDbXF1.mp4"
              Your browser does not support the video tag.
@@ -119,6 +119,33 @@
       })();
     </script>
 
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"6a9d1acf12774f67828fe25d05d47de4","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script>
+  // 1. Matikan Klik Kanan
+  document.addEventListener('contextmenu', event => event.preventDefault());
+
+  // 2. Matikan Shortcut Keyboard
+  document.onkeydown = function(e) {
+    // Memblokir F12 (DevTools)
+    if(e.keyCode == 123) {
+      return false;
+    }
+    // Memblokir CTRL+U (View Source)
+    if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+      return false;
+    }
+    // Memblokir CTRL+SHIFT+I (Inspect Element)
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+      return false;
+    }
+    // Memblokir CTRL+SHIFT+J (Console)
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+      return false;
+    }
+    // Memblokir CTRL+S (Save Page)
+    if(e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+      return false;
+    }
+  };
+</script>
 </body>
 </html>
